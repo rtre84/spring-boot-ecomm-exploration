@@ -1,6 +1,7 @@
 package com.springlearning.service;
 
 import com.springlearning.model.Order;
+import com.springlearning.producer.Sender;
 import com.springlearning.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +17,16 @@ public class OrderService {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    Sender sender;
+
     public boolean save(Order order) {
         ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Boolean.class);
 
         if (forEntity.hasBody()) {
             Order saved = orderRepository.save(order);
             if (saved != null) {
+                sender.send("Order Id: " + order.getId().toString());
                 return true;
             } else {
                 throw new OrderNotCreatedException();

@@ -1,12 +1,13 @@
 kafka:
   bootstrap-servers: localhost:9092
 server:
-  port: 8082
+  port: 8084
 spring:
   application:
-    name: order-service
+    name: payment-service
   jpa:
     show-sql: true
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+
