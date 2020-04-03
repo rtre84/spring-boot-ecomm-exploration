@@ -3,3 +3,6 @@ server:
 spring:
   application:
     name: edge-service
+  sleuth:
+    sampler:
+      probability: 1.0

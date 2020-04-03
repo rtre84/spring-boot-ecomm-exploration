@@ -5,3 +5,6 @@ spring:
     name: product-service
   jpa:
     show-sql: true
+  sleuth:
+    sampler:
+      probability: 1.0

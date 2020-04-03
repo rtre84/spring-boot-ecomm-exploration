@@ -10,3 +10,6 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+  sleuth:
+    sampler:
+      probability: 1.0
