@@ -21,7 +21,8 @@ public class OrderService {
     Sender sender;
 
     public boolean save(Order order) {
-        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Boolean.class);
+//        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Boolean.class);
+        ResponseEntity<Order.ProductDetail> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Order.ProductDetail.class);
 
         if (forEntity.hasBody()) {
             Order saved = orderRepository.save(order);

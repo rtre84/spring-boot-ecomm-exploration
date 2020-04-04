@@ -19,9 +19,15 @@ public class ProductController {
         return ResponseEntity.ok(saved);
     }
 
+//    @GetMapping
+//    public ResponseEntity<Boolean> isExists(@RequestParam String name) {
+//        boolean exists = productService.isExists(name);
+//        return ResponseEntity.ok(exists);
+//    }
+
     @GetMapping
-    public ResponseEntity<Boolean> isExists(@RequestParam String name) {
-        boolean exists = productService.isExists(name);
-        return ResponseEntity.ok(exists);
+    public ResponseEntity<Product> isExists(@RequestParam String name) {
+        Product existingProduct = productService.get(name);
+        return ResponseEntity.ok(existingProduct);
     }
 }

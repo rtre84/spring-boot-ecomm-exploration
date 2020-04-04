@@ -1,0 +1,1 @@
+[2020-04-03 20:18:29,702] WARN Unable to read additional data from client sessionid 0x10002d9e5a50000, likely client has closed socket (org.apache.zookeeper.server.NIOServerCnxn)
