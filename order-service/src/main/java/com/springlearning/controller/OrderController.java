@@ -6,7 +6,10 @@ import com.springlearning.service.OrderService.OrderNotCreatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "order")
@@ -25,8 +28,8 @@ public class OrderController {
     }
 
     @GetMapping
-    public ResponseEntity<Boolean> isExists(@RequestParam String userId) {
-        boolean exists = orderService.findByUserId(userId);
+    public ResponseEntity<Optional<Order>> isExists(@RequestParam String userId) {
+        Optional<Order> exists = orderService.findByUserId(userId);
         return ResponseEntity.ok(exists);
     }
 }

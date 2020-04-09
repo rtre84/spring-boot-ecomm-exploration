@@ -1,0 +1,6 @@
+[2020-04-06 08:57:19,232] INFO [GroupCoordinator 0]: Member consumer-1-0d913be5-ba6b-4919-8c78-38db0ad4a0d8 in group payment.t has failed, removing it from the group (kafka.coordinator.group.GroupCoordinator)
+[2020-04-06 08:57:19,278] INFO [GroupCoordinator 0]: Preparing to rebalance group payment.t in state PreparingRebalance with old generation 30 (__consumer_offsets-30) (reason: removing member consumer-1-0d913be5-ba6b-4919-8c78-38db0ad4a0d8 on heartbeat expiration) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-06 08:57:19,286] INFO [GroupCoordinator 0]: Group payment.t with generation 31 is now empty (__consumer_offsets-30) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-06 08:57:26,845] INFO [GroupCoordinator 0]: Preparing to rebalance group payment.t in state PreparingRebalance with old generation 31 (__consumer_offsets-30) (reason: Adding new member consumer-1-d703541a-c750-40ac-9619-001da9012fa0 with group instanceid None) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-06 08:57:26,864] INFO [GroupCoordinator 0]: Stabilized group payment.t generation 32 (__consumer_offsets-30) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-06 08:57:26,880] INFO [GroupCoordinator 0]: Assignment received from leader for group payment.t for generation 32 (kafka.coordinator.group.GroupCoordinator)

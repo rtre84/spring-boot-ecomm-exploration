@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Optional;
+
 @Service
 public class OrderService {
 
@@ -21,7 +23,6 @@ public class OrderService {
     Sender sender;
 
     public boolean save(Order order) {
-//        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Boolean.class);
         ResponseEntity<Order.ProductDetail> forEntity = restTemplate.getForEntity("http://product-service/product?name=" + order.getProductDetail().getName(), Order.ProductDetail.class);
 
         if (forEntity.hasBody()) {
@@ -43,9 +44,19 @@ public class OrderService {
         return orderRepository.findById(orderId) != null;
     }
 
-    public boolean findByUserId(String userId) {
-        return orderRepository.findByUserId(userId) != null;
+    public Optional<Order> findByUserId(String userId) {
+        return orderRepository.findByUserId(userId);
     }
+
+//    @HystrixCommand(fallbackMethod = "fallbackFindByUserId")
+//    public boolean findByUserId(String userId) {
+//        return restTemplate.getForEntity("http://product-service/product?name=SamsungA208", Order.ProductDetail.class).hasBody();
+//    }
+//
+//    // TODO: Make the fallback method useful
+//    public boolean fallbackFindByUserId(String userId) {
+//        return false;
+//    }
 
     public static class OrderNotCreatedException extends RuntimeException {
     }

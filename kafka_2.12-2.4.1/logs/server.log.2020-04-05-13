@@ -1,0 +1,8 @@
+[2020-04-05 13:01:04,546] INFO [GroupCoordinator 0]: Preparing to rebalance group payment.t in state PreparingRebalance with old generation 25 (__consumer_offsets-30) (reason: Adding new member consumer-1-675ec175-bf44-48f0-b222-072f26810805 with group instanceid None) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-05 13:01:04,565] INFO [GroupCoordinator 0]: Stabilized group payment.t generation 26 (__consumer_offsets-30) (kafka.coordinator.group.GroupCoordinator)
+[2020-04-05 13:01:04,717] INFO [GroupCoordinator 0]: Assignment received from leader for group payment.t for generation 26 (kafka.coordinator.group.GroupCoordinator)
+[2020-04-05 13:08:56,389] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 12 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-04-05 13:18:56,365] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 1 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-04-05 13:28:56,350] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-04-05 13:38:56,337] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-04-05 13:48:56,323] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
